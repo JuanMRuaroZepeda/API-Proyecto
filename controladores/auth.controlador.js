@@ -152,13 +152,13 @@ exports.crearTipo_Agua = (req, res) => {
         nombre_agua
     });
 
-    TipoAgua.create(newAgua, (err, gas) => {
+    TipoAgua.create(newAgua, (err, agua) => {
         if (err) {
             return res.status(500).send({
                 message: err.message || "Some error occurred while creating the Water Type."
             });
         }
-        res.send({ message: "Tipo de Agua creado exitosamente!", gas});
+        res.send({ message: "Tipo de Agua creado exitosamente!", agua});
     });    
 };
 

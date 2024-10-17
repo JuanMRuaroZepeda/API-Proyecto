@@ -1,7 +1,7 @@
 const db = require('../config/db');
 
-const TipoAgua = function (gas) {
-    this.nombre_agua = gas.nombre_agua;
+const TipoAgua = function (agua) {
+    this.nombre_agua = agua.nombre_agua;
 };
 
 //Crear Tipo Agua

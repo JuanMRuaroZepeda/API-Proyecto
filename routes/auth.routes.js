@@ -79,9 +79,9 @@ module.exports = (uploadPerfil) => {
             // Configura el correo
             const mailOptions = {
                 from: 'al2222106492@gmail.com', // Cambia esto por tu correo
-                to: 'al222210649@gmail.com', // Correo del destinatario
+                to: 'al222210649@gmail.com, al222111538@gmail.com, al222210557@gmail.com, alu222210663@gmail.com, al222210723@gmail.com, al222210758@gmail.com, al222111277@gmail.com', // Correo del destinatario
                 subject: 'Respaldo de base de datos',
-                text: 'Adjunto el respaldo de la base de datos.',
+                text: 'Adjunto el respaldo de la base de datos, esta copia se manda desde la API (Servidor), considerando que se guarda una copia en el mismo servidor y se envia una copia solo a los correos permitidos.',
                 attachments: [
                     {
                         filename: path.basename(backupFile),
