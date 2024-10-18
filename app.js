@@ -34,5 +34,5 @@ const PORT = process.env.PORT || 3003;
 
 // Iniciar el servidor
 app.listen(PORT, () => {
-    console.log(`Server is running on http://192.168.100.115:${PORT}/api/serverlab.`);
+    console.log(`Server is running on http://192.168.100.44:${PORT}/api/serverlab.`);
 });

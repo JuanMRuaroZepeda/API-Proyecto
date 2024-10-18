@@ -74,7 +74,7 @@ CREATE TABLE `tipo_agua` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_agua` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +83,7 @@ CREATE TABLE `tipo_agua` (
 
 LOCK TABLES `tipo_agua` WRITE;
 /*!40000 ALTER TABLE `tipo_agua` DISABLE KEYS */;
-INSERT INTO `tipo_agua` VALUES (1,'Melon'),(2,'Sandia'),(3,'Uva'),(9,'php'),(11,'php3'),(12,'php4');
+INSERT INTO `tipo_agua` VALUES (1,'Melon'),(2,'Sandia'),(3,'Uva');
 /*!40000 ALTER TABLE `tipo_agua` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `tipo_compra` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_compra` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -167,7 +167,7 @@ CREATE TABLE `venta` (
   CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`id_tipoagua`) REFERENCES `tipo_agua` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`id_tipocompra`) REFERENCES `tipo_compra` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `venta_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -176,7 +176,7 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
-INSERT INTO `venta` VALUES (1,2233,1,1,1,'2024-10-16 12:46:48');
+INSERT INTO `venta` VALUES (1,20,1,2,1,'2024-10-17 15:11:57'),(2,5,1,2,1,'2024-10-17 14:30:00'),(3,5,1,2,1,'2024-10-17 14:30:00'),(4,10,2,1,1,'2024-10-17 15:00:00'),(5,8,3,2,1,'2024-10-17 15:30:00'),(6,3,1,1,1,'2024-10-17 16:00:00');
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -189,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-17 11:40:59
+-- Dump completed on 2024-10-18 16:21:26

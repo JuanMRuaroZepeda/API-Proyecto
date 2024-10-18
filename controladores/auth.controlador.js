@@ -73,7 +73,7 @@ exports.login = async (req, res) => {
 exports.crearEstado = (req, res) => {
     const { nombre_estado } = req.body;
 
-    if(!nombre_estado) {
+    if (!nombre_estado) {
         return res.status(400).send({
             message: "All fields are required."
         });
@@ -89,14 +89,14 @@ exports.crearEstado = (req, res) => {
                 message: err.message || "Some error occurred while creating the Status."
             });
         }
-        res.send({ message: "Estado creado exitosamente!", estado});
+        res.send({ message: "Estado creado exitosamente!", estado });
     });
 };
 
 exports.crearRol = (req, res) => {
     const { nombre_rol } = req.body;
 
-    if(!nombre_rol) {
+    if (!nombre_rol) {
         return res.status(400).send({
             message: "All fields are required."
         });
@@ -112,14 +112,14 @@ exports.crearRol = (req, res) => {
                 message: err.message || "Some error occurred while creating the Role."
             });
         }
-        res.send({ message: "Rol creado exitosamente!", rol});
+        res.send({ message: "Rol creado exitosamente!", rol });
     });
 };
 
 exports.crearTipo_Compra = (req, res) => {
     const { nombre_compra } = req.body;
 
-    if(!nombre_compra) {
+    if (!nombre_compra) {
         return res.status(400).send({
             message: "All fields are required."
         });
@@ -135,20 +135,20 @@ exports.crearTipo_Compra = (req, res) => {
                 message: err.message || "Some error occurred while creating the Purchase Type."
             });
         }
-        res.send({ message: "Tipo de compra creado exitosamente!", compra});
+        res.send({ message: "Tipo de compra creado exitosamente!", compra });
     });
 };
 
 exports.crearTipo_Agua = (req, res) => {
     const { nombre_agua } = req.body;
 
-    if(!nombre_agua) {
+    if (!nombre_agua) {
         return res.status(400).send({
             message: "All fields are required."
         });
     }
 
-    const newAgua  = new TipoAgua({
+    const newAgua = new TipoAgua({
         nombre_agua
     });
 
@@ -158,21 +158,21 @@ exports.crearTipo_Agua = (req, res) => {
                 message: err.message || "Some error occurred while creating the Water Type."
             });
         }
-        res.send({ message: "Tipo de Agua creado exitosamente!", agua});
-    });    
+        res.send({ message: "Tipo de Agua creado exitosamente!", agua });
+    });
 };
 
 exports.crearUsuario = (req, res) => {
-    const { nombre, apellido, email, password, telefono, id_rol, id_estado} = req.body;
+    const { nombre, apellido, email, password, telefono, id_rol, id_estado } = req.body;
     const imagen = req.file;
 
-    if( !nombre || !apellido || !email || !password || !imagen || !telefono || !id_rol || !id_estado){
+    if (!nombre || !apellido || !email || !password || !imagen || !telefono || !id_rol || !id_estado) {
         return res.status(400).send({
             message: 'All fields are required.'
         });
     }
 
-    const hashedPassword = bcrypt.hashSync(password,8);
+    const hashedPassword = bcrypt.hashSync(password, 8);
     const imagenpath = imagen.path;
 
     const newUsuario = new Usuarios({
@@ -306,16 +306,16 @@ exports.consultarVentas = (req, res) => {
 
 //Actualizar
 exports.actualizarEstado = (req, res) => {
-    const {id} = req.params;
-    const {nombre_estado} = req.body;
+    const { id } = req.params;
+    const { nombre_estado } = req.body;
 
     const updateById = {
         nombre_estado: nombre_estado
     };
 
-    Estados.updateById(id, updateById, (err, data) =>{
+    Estados.updateById(id, updateById, (err, data) => {
         if (err) {
-            if(err.kind === "not_found") {
+            if (err.kind === "not_found") {
                 return res.status(404).send({
                     message: `Estado con ID ${id} no encontrado.`
                 });
@@ -324,21 +324,21 @@ exports.actualizarEstado = (req, res) => {
                 message: `Error al actualizar el estado con ID ${id}.`
             });
         }
-        res.send({ message: `Estado actualizado exitosamente!`, data});
+        res.send({ message: `Estado actualizado exitosamente!`, data });
     });
 };
 
 exports.actualizarRol = (req, res) => {
-    const {id} = req.params;
-    const {nombre_rol} = req.body;
+    const { id } = req.params;
+    const { nombre_rol } = req.body;
 
     const updateById = {
         nombre_rol: nombre_rol
     };
 
-    Roles.updateById(id, updateById, (err, data) =>{
+    Roles.updateById(id, updateById, (err, data) => {
         if (err) {
-            if(err.kind === "not_found") {
+            if (err.kind === "not_found") {
                 return res.status(404).send({
                     message: `Rol con ID ${id} no encontrado.`
                 });
@@ -347,13 +347,13 @@ exports.actualizarRol = (req, res) => {
                 message: `Error al actualizar el rol con ID ${id}.`
             });
         }
-        res.send({ message: `Rol actualizado exitosamente!`, data});
+        res.send({ message: `Rol actualizado exitosamente!`, data });
     });
 };
 
 exports.actualizarTipo_Compra = (req, res) => {
-    const {id} = req.params;
-    const {nombre_compra} = req.body;
+    const { id } = req.params;
+    const { nombre_compra } = req.body;
 
     const updateById = {
         nombre_compra: nombre_compra
@@ -361,7 +361,7 @@ exports.actualizarTipo_Compra = (req, res) => {
 
     Compra.updateById(id, updateById, (err, data) => {
         if (err) {
-            if(err.kind === "not_found") {
+            if (err.kind === "not_found") {
                 return res.status(404).send({
                     message: `Tipo de compra con ID ${id} no encontrado.`
                 });
@@ -375,8 +375,8 @@ exports.actualizarTipo_Compra = (req, res) => {
 };
 
 exports.actualizarTipo_Agua = (req, res) => {
-    const {id} = req.params;
-    const {nombre_agua} = req.body;
+    const { id } = req.params;
+    const { nombre_agua } = req.body;
 
     const updateById = {
         nombre_agua: nombre_agua
@@ -384,7 +384,7 @@ exports.actualizarTipo_Agua = (req, res) => {
 
     TipoAgua.updateById(id, updateById, (err, data) => {
         if (err) {
-            if(err.kind === "not_found") {
+            if (err.kind === "not_found") {
                 return res.status(404).send({
                     message: `Tipo de agua con ID ${id} no encontrado.`
                 });
@@ -438,29 +438,35 @@ exports.actualizarUsuarioById = (req, res) => {
 };
 
 exports.actualizarVenta = (req, res) => {
-    const {id} = req.params;
-    const {cantidad, id_tipoagua, id_tipocompra, id_usuario, fecha} = req.body;
+    const { id } = req.params;
+    const { cantidad, id_tipoagua, id_tipocompra, id_usuario, fecha } = req.body;
 
     const updateById = {
-        cantidad:cantidad,
-        id_tipoagua:id_tipoagua,
-        id_tipocompra:id_tipocompra,
-        id_usuario:id_usuario,
-        fecha:fecha || new Date(),
+        cantidad,
+        id_tipoagua,
+        id_tipocompra,
+        id_usuario,
+        fecha: fecha || new Date(),
     };
 
     Ventas.updateById(id, updateById, (err, data) => {
-        if(err) {
-            if(err.kind === "not_found") {
+        if (err) {
+            if (err.kind === "not_found") {
                 return res.status(400).send({
-                    message: `Venta con ID ${id} no encontrado.`
+                    success: false,
+                    message: `Venta con ID ${id} no encontrada.`
                 });
             }
             return res.status(500).send({
+                success: false,
                 message: `Error al actualizar la venta con ID ${id}`
             });
         }
-        res.send({ message: `Venta actualzada exitosamente! `, data});
+        res.send({
+            success: true,
+            message: `Venta actualizada exitosamente!`,
+            data
+        });
     });
 };
 
@@ -468,7 +474,7 @@ exports.actualizarVenta = (req, res) => {
 exports.eliminarEstado = (req, res) => {
     const id = req.params.id;
 
-    Estados.remove(id, (err, data) =>{
+    Estados.remove(id, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(400).send({
@@ -479,7 +485,7 @@ exports.eliminarEstado = (req, res) => {
                     message: `No se pudo elmiminar el estado con el ID ${id}.`
                 });
             }
-        } else res.send({ message: `Estado eliminado exitosamente!`});
+        } else res.send({ message: `Estado eliminado exitosamente!` });
     });
 };
 
@@ -497,7 +503,7 @@ exports.eliminarRol = (req, res) => {
                     message: `Error al eliminar el rol con ID ${id}.`
                 });
             }
-        } else res.send({ message: `Rol eliminado exitosamente!`});
+        } else res.send({ message: `Rol eliminado exitosamente!` });
     });
 };
 
@@ -557,8 +563,8 @@ exports.eliminarUsuario = (req, res) => {
 exports.eliminarVenta = (req, res) => {
     const id = req.params.id;
     Ventas.remove(id, (err, data) => {
-        if(err) {
-            if( err.kind === "not_found" ){
+        if (err) {
+            if (err.kind === "not_found") {
                 return res.status(404).send({
                     message: `Venta con ID ${id} no encontrada.`
                 });
@@ -567,6 +573,6 @@ exports.eliminarVenta = (req, res) => {
                     message: `Error al eliminar la Venta con ID ${id}.`
                 });
             };
-        } else res.send({ message: `Venta elminada exitosamente!`});
+        } else res.send({ message: `Venta elminada exitosamente!` });
     });
 };

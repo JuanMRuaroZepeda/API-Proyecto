@@ -74,7 +74,7 @@ CREATE TABLE `tipo_agua` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_agua` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,6 +83,7 @@ CREATE TABLE `tipo_agua` (
 
 LOCK TABLES `tipo_agua` WRITE;
 /*!40000 ALTER TABLE `tipo_agua` DISABLE KEYS */;
+INSERT INTO `tipo_agua` VALUES (1,'Melon'),(2,'Sandia'),(3,'Uva');
 /*!40000 ALTER TABLE `tipo_agua` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +98,7 @@ CREATE TABLE `tipo_compra` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_compra` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,7 +142,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Juan Manuel','Ruaro Zepeda','al222210649@gmail.com','$2a$08$KMnWdeXDLlifvRrFyiowPeAWJfLZWUA3QN6q4MLxxMOKnEwbblDNy','7294025400','perfil\\1727805173627.jpg',1,1),(2,'Alexis Raymundo','Almazán Gabino','AlexisRAG@gmail.com','$2a$08$bBGEzsVPrNnOgkSydYWNheQBjZNe4d8u69uyoXRW0KYMFLA7XMSby','5555555555','perfil\\1727805272939.jpg',2,1),(3,'Alan ','Ramirez Davila','AlanRD@gmail.com','$2a$08$NsSBzTxXOD83VIOSeUbUuOLLSkvWTkd9.6EpS6WBP7tO/udRgibvS','5555555555','perfil\\1727805304310.jpg',3,1),(4,'Invitado','Invitado','invitado@gmail.com','$2a$08$4E6wc4KPX6SUHJrXlGbFXub2r1P1B4XBa/aiOgwQiK2nzT4HrCmgi','5555555555','perfil\\1727805349132.jpg',4,1),(5,'php','php','php@gmail.com','$2a$08$KgN4hpAaq6b2dc.2DlHvmers4W5BEoKt8O7ushfjNawGFl.QrpKXW','7777777778','perfil\\1729057782241.jpg',1,1),(6,'php','php','php@gmail.com','$2a$08$ctgIpD70BmlhUBZOFfCOmu8flu28qtqXRmge/LV./pV0y/2EGQkuy','7777777778','perfil\\1729057931166.jpg',1,1),(7,'php','php','php@gmail.com','$2a$08$VMg.XwEvPVmXaph9X/uEB.ptnhmTsoz.CCmmnstTMfLKgrj9ZZ.C.','7777777778','perfil\\1729057946674.jpg',1,1),(8,'n','n','n@gmail.com','$2a$08$bv3NUmbMXLYc11xxEKm.EO6RKkYWUsi8Dm2DCEgvpAO5xTemL0X5u','7','perfil\\1729057983001.jpg',1,1),(9,'a','a','a@gmail.com','$2a$08$BlsbmFDUcvEFKzdYpieU2esDWxb6QxNDKh3pwhHUOAnYK2yL43leK','1','perfil\\1729058062468.jpg',1,1),(12,'formulario','formulario','forr@gmail.com','$2a$08$Ov5SAsg1cdHQpM57/gLlT.jMy4o3c9VhzpHFDx8irNYPnhLmKO9re','1','perfil\\1729060018987.pdf',3,1);
+INSERT INTO `usuarios` VALUES (1,'Juan Manuel','Ruaro Zepeda','al222210649@gmail.com','$2a$08$KMnWdeXDLlifvRrFyiowPeAWJfLZWUA3QN6q4MLxxMOKnEwbblDNy','7294025400','perfil\\1727805173627.jpg',1,1),(2,'Alexis Raymundo','Almazán Gabino','AlexisRAG@gmail.com','$2a$08$bBGEzsVPrNnOgkSydYWNheQBjZNe4d8u69uyoXRW0KYMFLA7XMSby','5555555555','perfil\\1727805272939.jpg',2,1),(3,'Alan ','Ramirez Davila','AlanRD@gmail.com','$2a$08$NsSBzTxXOD83VIOSeUbUuOLLSkvWTkd9.6EpS6WBP7tO/udRgibvS','5555555555','perfil\\1727805304310.jpg',3,1),(4,'Invitado','Invitado','invitado@gmail.com','$2a$08$4E6wc4KPX6SUHJrXlGbFXub2r1P1B4XBa/aiOgwQiK2nzT4HrCmgi','5555555555','perfil\\1727805349132.jpg',4,1),(5,'php','php','php@gmail.com','$2a$08$KgN4hpAaq6b2dc.2DlHvmers4W5BEoKt8O7ushfjNawGFl.QrpKXW','7777777778','perfil\\1729057782241.jpg',1,1),(6,'php','php','php@gmail.com','$2a$08$ctgIpD70BmlhUBZOFfCOmu8flu28qtqXRmge/LV./pV0y/2EGQkuy','7777777778','perfil\\1729057931166.jpg',1,1),(7,'php','php','php@gmail.com','$2a$08$VMg.XwEvPVmXaph9X/uEB.ptnhmTsoz.CCmmnstTMfLKgrj9ZZ.C.','7777777778','perfil\\1729057946674.jpg',1,1),(8,'n','n','n@gmail.com','$2a$08$bv3NUmbMXLYc11xxEKm.EO6RKkYWUsi8Dm2DCEgvpAO5xTemL0X5u','7','perfil\\1729057983001.jpg',1,1),(12,'formulario','formulario','forr@gmail.com','$2a$08$EuykW23ZRl2r.yGjLQXQhOdSTP4ZeAtAm.YFWXTxMbC4B7mVsvFFm','1','perfil\\shadow.png',3,1);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -166,7 +167,7 @@ CREATE TABLE `venta` (
   CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`id_tipoagua`) REFERENCES `tipo_agua` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`id_tipocompra`) REFERENCES `tipo_compra` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `venta_ibfk_3` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,6 +176,7 @@ CREATE TABLE `venta` (
 
 LOCK TABLES `venta` WRITE;
 /*!40000 ALTER TABLE `venta` DISABLE KEYS */;
+INSERT INTO `venta` VALUES (1,20,1,2,1,'2024-10-17 15:11:57'),(2,5,1,2,1,'2024-10-17 14:30:00'),(3,5,1,2,1,'2024-10-17 14:30:00'),(4,10,2,1,1,'2024-10-17 15:00:00'),(5,8,3,2,1,'2024-10-17 15:30:00'),(6,3,1,1,1,'2024-10-17 16:00:00');
 /*!40000 ALTER TABLE `venta` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -187,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-16 11:51:04
+-- Dump completed on 2024-10-18 16:23:19
