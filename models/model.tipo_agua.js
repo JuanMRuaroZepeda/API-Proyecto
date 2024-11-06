@@ -2,6 +2,7 @@ const db = require('../config/db');
 
 const TipoAgua = function (agua) {
     this.nombre_agua = agua.nombre_agua;
+    this.cantidad = agua.cantidad;
 };
 
 //Crear Tipo Agua
@@ -49,6 +50,26 @@ TipoAgua.updateById = (id, newAgua, result) => {
     db.query(
         `UPDATE tipo_agua SET nombre_agua = ? WHERE id = ?`,
         [newAgua.nombre_agua, id],
+        (err, res) => {
+            if (err) {
+                console.log('Error: ', err);
+                result(null, err);
+                return;
+            }
+            if (res.affectedRows == 0) {
+                result({ kind: "not_found" }, null);
+                return;
+            }
+            result(null, { id: id, ...newAgua });
+        }
+    );
+};
+
+//Actualizar la CANTIDAD que existe de AGUA
+TipoAgua.updateByCantidad = (id, newAgua, result) => {
+    db.query(
+        'UPDATE tipo_agua SET cantidad = ? WHERE id = ?',
+        [newAgua.cantidad, id],
         (err, res) => {
             if (err) {
                 console.log('Error: ', err);

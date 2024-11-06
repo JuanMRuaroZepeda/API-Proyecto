@@ -44,6 +44,9 @@ module.exports = (uploadPerfil) => {
     Rutas.delete('/eliminar-usuario/:id', authController.eliminarUsuario);
     Rutas.delete('/eliminar-venta/:id', authController.eliminarVenta);
 
+    //Actualizar cantidad de Agua por Cada Tipo
+    Rutas.put('/actualizar-cantidad_agua/:id', authController.actualizarCantidad_Agua);
+
     //Exportar base de datos y enviarlo por correo electronico
     Rutas.get('/respaldar-base-datos', (req, res) => {
         exec('node backup.js', (error, stdout, stderr) => {

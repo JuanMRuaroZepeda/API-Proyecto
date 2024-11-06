@@ -397,6 +397,30 @@ exports.actualizarTipo_Agua = (req, res) => {
     });
 };
 
+//Actualizar Cantidad de Agua
+exports.actualizarCantidad_Agua = (req, res) => {
+    const { id } = req.params;
+    const { cantidad } = req.body;
+
+    const updateByCantidad = {
+        cantidad: cantidad
+    };
+
+    TipoAgua.updateByCantidad(id, updateByCantidad, (err, data) => {
+        if (err) {
+            if (err.kind === "not_found") {
+                return res.status(404).send({
+                    message: `Tipo de agua con ID ${id} no encontrado.`
+                });
+            }
+            return res.status(500).send({
+                message: `Error al actualizar la cantidad de agua con ID ${id}.`
+            });
+        }
+        res.send({ message: 'Cantidad de Agua actualizada exitosamente!', data});
+    });
+};
+
 exports.actualizarUsuarioById = (req, res) => {
     const id = req.params.id;
     const { nombre, apellido, email, password, telefono, id_rol, id_estado } = req.body;
