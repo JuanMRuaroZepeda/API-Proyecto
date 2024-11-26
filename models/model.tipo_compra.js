@@ -2,6 +2,7 @@ const db = require('../config/db');
 
 const Compras = function (compra) {
     this.nombre_compra = compra.nombre_compra;
+    this.mililitros = compra.mililitros;
 };
 
 //Crear Tipo Compra
@@ -47,8 +48,8 @@ Compras.findAll = (result) => {
 //Actualizar tipo compra
 Compras.updateById = (id, newCompra, result) => {
     db.query(
-        `UPDATE tipo_compra SET nombre_compra = ? WHERE id = ?`,
-        [newCompra.nombre_compra, id],
+        `UPDATE tipo_compra SET nombre_compra = ?, mililitros = ? WHERE id = ?`,
+        [newCompra.nombre_compra, newCompra.mililitros, id],
         (err, res) => {
             if (err) {
                 console.log('Error: ', err);

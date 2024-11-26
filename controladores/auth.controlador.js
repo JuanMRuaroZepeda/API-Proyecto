@@ -117,16 +117,17 @@ exports.crearRol = (req, res) => {
 };
 
 exports.crearTipo_Compra = (req, res) => {
-    const { nombre_compra } = req.body;
+    const { nombre_compra, mililitros } = req.body;
 
-    if (!nombre_compra) {
+    if (!nombre_compra && !mililitros) {
         return res.status(400).send({
             message: "All fields are required."
         });
     }
 
     const newCompra = new Compra({
-        nombre_compra
+        nombre_compra,
+        mililitros
     });
 
     Compra.create(newCompra, (err, compra) => {
@@ -353,10 +354,11 @@ exports.actualizarRol = (req, res) => {
 
 exports.actualizarTipo_Compra = (req, res) => {
     const { id } = req.params;
-    const { nombre_compra } = req.body;
+    const { nombre_compra, mililitros } = req.body;
 
     const updateById = {
-        nombre_compra: nombre_compra
+        nombre_compra: nombre_compra,
+        mililitros: mililitros
     };
 
     Compra.updateById(id, updateById, (err, data) => {
